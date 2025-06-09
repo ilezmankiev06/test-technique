@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { filterData } from "./filterData.js";
+import { countData } from "./countData.js";
 
 const mockData = [
   {
@@ -17,24 +17,23 @@ const mockData = [
   },
 ];
 
-describe("filterData", () => {
-  it("filters animals by pattern", () => {
-    const result = filterData(mockData, "ry");
+describe("CountData", () => {
+  it("counts people and animals correctly", () => {
+    const result = countData(mockData);
     expect(result).toEqual([
       {
-        name: "Testland",
+        name: "Testland [2]",
         people: [
           {
-            name: "Bob",
+            name: "Alice [2]",
+            animals: [{ name: "Tiger" }, { name: "Panther" }],
+          },
+          {
+            name: "Bob [1]",
             animals: [{ name: "Canary" }],
           },
         ],
       },
     ]);
-  });
-
-  it("returns empty if no match", () => {
-    const result = filterData(mockData, "aaa");
-    expect(result).toEqual([]);
   });
 });
