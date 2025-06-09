@@ -2,6 +2,8 @@
   "name": "cli-filter-count",
   "type": "module",
   "scripts": {
+    "filter": "node app.js --filter=ry",
+    "count": "node app.js --count",
     "test": "vitest"
   },
   "devDependencies": {
